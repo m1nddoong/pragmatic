@@ -2,12 +2,12 @@
 
 {% block content %}
 
-<div style="text-align : center">
-  <form action="{% url 'accountapp:create' %}" method="post">  <!--url 일원화, post 방식 으로 전송 -->
-    {% csrf_token %}  <!-- csrf_token 은 항상 들어 가야 하는 것 -->
-    {{ form }}  <!-- 우리가 원하는 모든 form 을 html 로 만들어 준다. -->
-    <input type="submit" class="btn btn-primary">
-  </form>
-</div>
+  <div style="text-align : center">
+    <form action="{% url 'accountapp:create' %}" method="post">  <!--url 일원화, post 방식 으로 전송 -->
+      {% csrf_token %}  <!-- csrf_token 은 항상 들어 가야 하는 것 -->
+      {{ form }}  <!-- 우리가 원하는 모든 form 을 html 로 만들어 준다. -->
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
 
 {% endblock %}
