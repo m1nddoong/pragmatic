@@ -6,7 +6,7 @@
     <div class="mb-4"> <!-- margin bottom 해서 4배 -->
       <h4>Quit</h4>
     </div>
-    <form action="{% url 'accountapp:delete' pk=user.pk %}" method="post">  <!--url 일원화, post 방식 으로 전송 -->
+    <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">  <!--url 일원화, post 방식 으로 전송 -->
       {% csrf_token %}  <!-- csrf_token 은 항상 들어 가야 하는 것 -->
       <input type="submit" class="btn btn-danger rounded-pill col-6 mt-3">
     </form>
