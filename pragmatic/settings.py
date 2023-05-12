@@ -126,11 +126,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/' # 정적인 static 관련한 설정
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -145,3 +144,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = reverse_lazy('accountapp:hello_world')
 LOGOUT_REDIRECT_URL = reverse_lazy('accountapp:login')
+
+# 주소창에서 /media/ 이하의 경로로 접근을 해야지 실제 media 파일에 접근이 가능하다는 의미
+# 127.0.0.1:8000/media/test.jpg -> 이런식으로 우리가 원하는 jpg 파일에 접근 가능하게된다.
+MEDIA_URL = '/media/' # 원하는 대로 커스터마이징 가능 -> media 로 설정
+
+
+# media 파일을 서버에 올렸을 때 어느 경로에 지정이 될것인지, 그 경로의 root 가 어디가 될것인지에 대한 설정
+# media 라는 디렉토리가 새로 생기면서 media 아래에 있는 디렉토리에 우리가 올린 파일들이 다 저장되게 됨
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
