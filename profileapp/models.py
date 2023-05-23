@@ -5,6 +5,7 @@ from django.db import models
 
 class Profile(models.Model):
     # Profile 과 user 를 하나씩 연결해준다.
+    # 사용자 한명당 프로필 몇 개를, 혹은 게시글 몇 개를 연결시킬 것인지를 나타내는 것이 OneToOneField
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     image = models.ImageField(upload_to='profile/', null=True)
     nickname = models.CharField(max_length=20, unique=True, null=True)
