@@ -48,8 +48,8 @@ class ArticleUpdateView(UpdateView):
         return reverse('articleapp:detail', kwargs={'pk': self.object.pk})
 
 
-@method_decorator(article_ownership_required, 'get')
-@method_decorator(article_ownership_required, 'post')
+# @method_decorator(article_ownership_required, 'get')
+# @method_decorator(article_ownership_required, 'post')
 class ArticleDeleteView(DeleteView):
     model = Article
     context_object_name = 'target_article'
