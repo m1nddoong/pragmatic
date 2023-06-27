@@ -40,7 +40,13 @@
       {% endif %}
       <hr> <!-- 밑에 코멘트가 들어갈 공간 분리-->
 
+      {% for comment in target_article.comment.all %}
+        {% include 'commentapp/detail.html' with comment=comment %}
+      {% endfor %}
+
+      <!-- 댓글 생성창 연결해주는 부분 -->
       {% include 'commentapp/create.html' with article=target_article %}
+
 
     </div>
   </div>

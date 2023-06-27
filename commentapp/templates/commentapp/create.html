@@ -9,6 +9,7 @@
     <form action="{% url 'commentapp:create' %}" method="post">  <!--url 일원화, post 방식 으로 전송 -->
       {% csrf_token %}
       {% bootstrap_form form %}
+
       {% if user.is_authenticated %}
       <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
       {% else %}
