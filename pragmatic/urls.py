@@ -18,7 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+from articleapp.views import ArticleListView
+
 urlpatterns = [
+    # 아무것도 안들어갔을떄, ArticleListView 를 그대로 보여줄 것, 이름은 home 으로 지정
+    path('', ArticleListView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accountapp.urls')),
     path('profiles/', include('profileapp.urls')),
